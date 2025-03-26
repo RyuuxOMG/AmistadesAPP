@@ -4,6 +4,7 @@
  */
 package autonoma.AmistadesAPP.views;
 import autonoma.AmistadesAPP.models.Amigo;
+import autonoma.AmistadesAPP.models.DirectorioAmistades;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,9 +18,9 @@ import javax.swing.JPanel;
 public class PaginaPrincipal extends javax.swing.JFrame {
     private Amigo amigo;
     private List<Amigo> listaAmigos = new ArrayList<>();
-    /**
-     * Creates new form PaginaPrincipal
-     */
+    private DirectorioAmistades directorio = new DirectorioAmistades();
+
+   
     public PaginaPrincipal(Amigo amigo, List<Amigo> listaAmigos ) {
         
         initComponents();
@@ -125,6 +126,9 @@ public class PaginaPrincipal extends javax.swing.JFrame {
 
         btnBuscarAmigo.setBackground(new java.awt.Color(255, 255, 255));
         btnBuscarAmigo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBuscarAmigoMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnBuscarAmigoMouseEntered(evt);
             }
@@ -363,6 +367,12 @@ public class PaginaPrincipal extends javax.swing.JFrame {
     Informacion verInfo = new Informacion(this, true);
         verInfo.setVisible(true);
     }//GEN-LAST:event_btnInformacionMouseClicked
+
+    private void btnBuscarAmigoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarAmigoMouseClicked
+     BuscarAmigo buscarAmigo = new BuscarAmigo(this, true, directorio);
+        buscarAmigo.setVisible(true);
+
+    }//GEN-LAST:event_btnBuscarAmigoMouseClicked
     private void mouseEntered(JPanel panel){
         panel.setBackground(new Color(0,108,254));
     }
@@ -382,6 +392,24 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         
         listaAmigos.add(amigo);
         JOptionPane.showMessageDialog(this, "Amigo agregado exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+    }
+    
+    public void buscarAmigo() {
+        String correo = JOptionPane.showInputDialog(this, "Ingrese el correo del amigo a buscar:");
+        
+        if (correo == null || correo.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Debe ingresar un correo válido.", "Error", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        for (Amigo a : listaAmigos) {
+            if (a.getCorreo().equalsIgnoreCase(correo)) {
+                JOptionPane.showMessageDialog(this, "Amigo encontrado: " + a.getNombre(), "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                return;
+            }
+        }
+
+        JOptionPane.showMessageDialog(this, "Amigo no encontrado.", "Error", JOptionPane.ERROR_MESSAGE);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AgregarPersona;
