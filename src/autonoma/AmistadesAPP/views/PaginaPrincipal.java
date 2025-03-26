@@ -31,8 +31,24 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        AgregarP = new javax.swing.JPanel();
+        AgregarPersona = new javax.swing.JLabel();
+        BuscarP = new javax.swing.JPanel();
+        BuscarPersona = new javax.swing.JLabel();
+        InfoAPP = new javax.swing.JPanel();
+        InformacionAPP = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(166, 212, 249));
+
+        jPanel3.setBackground(new java.awt.Color(166, 212, 249));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/autonoma/AmistadesAPP/images/Amigos.png"))); // NOI18N
 
@@ -53,7 +69,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
-        jLabel2.setFont(new java.awt.Font("Dubai Medium", 3, 48)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Dubai Medium", 1, 48)); // NOI18N
         jLabel2.setText("AMISTADES UAM");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -63,9 +79,9 @@ public class PaginaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(96, 96, 96)
+                .addGap(83, 83, 83)
                 .addComponent(jLabel2)
-                .addContainerGap(445, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -77,15 +93,184 @@ public class PaginaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(37, Short.MAX_VALUE))
         );
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        AgregarP.setBackground(new java.awt.Color(255, 255, 255));
+        AgregarP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AgregarPMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                AgregarPMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                AgregarPMouseExited(evt);
+            }
+        });
+
+        AgregarPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/autonoma/AmistadesAPP/images/AgregarAmigos.png"))); // NOI18N
+
+        javax.swing.GroupLayout AgregarPLayout = new javax.swing.GroupLayout(AgregarP);
+        AgregarP.setLayout(AgregarPLayout);
+        AgregarPLayout.setHorizontalGroup(
+            AgregarPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AgregarPLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(AgregarPersona)
+                .addContainerGap(10, Short.MAX_VALUE))
+        );
+        AgregarPLayout.setVerticalGroup(
+            AgregarPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AgregarPLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(AgregarPersona)
+                .addContainerGap(10, Short.MAX_VALUE))
+        );
+
+        BuscarP.setBackground(new java.awt.Color(255, 255, 255));
+
+        BuscarPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/autonoma/AmistadesAPP/images/BuscarAmigo.png"))); // NOI18N
+        BuscarPersona.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BuscarPersonaMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BuscarPersonaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BuscarPersonaMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout BuscarPLayout = new javax.swing.GroupLayout(BuscarP);
+        BuscarP.setLayout(BuscarPLayout);
+        BuscarPLayout.setHorizontalGroup(
+            BuscarPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BuscarPLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(BuscarPersona)
+                .addContainerGap(10, Short.MAX_VALUE))
+        );
+        BuscarPLayout.setVerticalGroup(
+            BuscarPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BuscarPLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(BuscarPersona, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(10, 10, 10))
+        );
+
+        InfoAPP.setBackground(new java.awt.Color(255, 255, 255));
+
+        InformacionAPP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/autonoma/AmistadesAPP/images/AcercaDeAplicacion.png"))); // NOI18N
+        InformacionAPP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                InformacionAPPMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                InformacionAPPMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                InformacionAPPMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout InfoAPPLayout = new javax.swing.GroupLayout(InfoAPP);
+        InfoAPP.setLayout(InfoAPPLayout);
+        InfoAPPLayout.setHorizontalGroup(
+            InfoAPPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InfoAPPLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(InformacionAPP)
+                .addContainerGap(10, Short.MAX_VALUE))
+        );
+        InfoAPPLayout.setVerticalGroup(
+            InfoAPPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InfoAPPLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(InformacionAPP)
+                .addContainerGap(10, Short.MAX_VALUE))
+        );
+
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/autonoma/AmistadesAPP/images/Salir.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jLabel6)
+                .addContainerGap(10, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(10, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addGap(10, 10, 10))
+        );
+
+        jLabel3.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
+        jLabel3.setText("Agregar amigo");
+
+        jLabel4.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
+        jLabel4.setText("Buscar Amigo");
+
+        jLabel5.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
+        jLabel5.setText("Información app");
+
+        jLabel7.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
+        jLabel7.setText("Salir");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(AgregarP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel3)))
+                .addGap(70, 70, 70)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BuscarP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel4)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(InfoAPP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGap(70, 70, 70)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(79, 79, 79))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 317, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(InfoAPP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BuscarP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AgregarP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel7))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -94,22 +279,58 @@ public class PaginaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(0, 0, 0)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(0, 0, 0)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void AgregarPMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarPMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AgregarPMouseEntered
+
+    private void AgregarPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarPMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AgregarPMouseClicked
+
+    private void AgregarPMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarPMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AgregarPMouseExited
+
+    private void BuscarPersonaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BuscarPersonaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BuscarPersonaMouseClicked
+
+    private void BuscarPersonaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BuscarPersonaMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BuscarPersonaMouseEntered
+
+    private void BuscarPersonaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BuscarPersonaMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BuscarPersonaMouseExited
+
+    private void InformacionAPPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InformacionAPPMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_InformacionAPPMouseClicked
+
+    private void InformacionAPPMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InformacionAPPMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_InformacionAPPMouseEntered
+
+    private void InformacionAPPMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InformacionAPPMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_InformacionAPPMouseExited
 
     /**
      * @param args the command line arguments
@@ -147,10 +368,22 @@ public class PaginaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel AgregarP;
+    private javax.swing.JLabel AgregarPersona;
+    private javax.swing.JPanel BuscarP;
+    private javax.swing.JLabel BuscarPersona;
+    private javax.swing.JPanel InfoAPP;
+    private javax.swing.JLabel InformacionAPP;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel7;
     // End of variables declaration//GEN-END:variables
 }
