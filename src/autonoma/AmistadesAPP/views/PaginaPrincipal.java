@@ -21,11 +21,12 @@ public class PaginaPrincipal extends javax.swing.JFrame {
      * Creates new form PaginaPrincipal
      */
     public PaginaPrincipal(Amigo amigo, List<Amigo> listaAmigos ) {
+        
         initComponents();
         
         this.setLocationRelativeTo(null);
         try{
-            this.setIconImage(new ImageIcon(getClass().getResource("/autonoma/BibliotecaApp/images/Biblioteca.png")).getImage());
+            this.setIconImage(new ImageIcon(getClass().getResource("/autonoma/AmistadesApp/images/Amigos.png")).getImage());
         }catch(Exception e){
             
         }
