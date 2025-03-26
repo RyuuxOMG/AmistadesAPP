@@ -5,6 +5,8 @@
 package autonoma.AmistadesAPP.views;
 
 import autonoma.AmistadesAPP.models.Amigo;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,13 +20,15 @@ public class AgregarAmigo extends javax.swing.JDialog {
     /**
      * Creates new form AgregarAmigo
      */
-    
+    private List<Amigo> listaAmigos = new ArrayList<>();
+
     private Amigo amigo;
     
-    public AgregarAmigo(java.awt.Frame parent, boolean modal, Amigo amigo) {
+    public AgregarAmigo(java.awt.Frame parent, boolean modal, Amigo amigo, List<Amigo> listaAmigos) {
         super(parent, modal);
         initComponents();
         this.amigo = amigo;
+        this.listaAmigos = listaAmigos;
     }
 
     /**
@@ -48,6 +52,7 @@ public class AgregarAmigo extends javax.swing.JDialog {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -157,22 +162,27 @@ public class AgregarAmigo extends javax.swing.JDialog {
         jLabel2.setFont(new java.awt.Font("Dubai Medium", 1, 48)); // NOI18N
         jLabel2.setText("Agregar Amigo");
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/autonoma/AmistadesAPP/images/Amigos.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(138, 138, 138)
+                .addGap(40, 40, 40)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
+                .addContainerGap(14, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26))
@@ -219,13 +229,17 @@ public class AgregarAmigo extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(this, "El teléfono debe comenzar con 606 o 30.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-
         
+        for (Amigo a : listaAmigos) {
+            if (a.getCorreo().equalsIgnoreCase(correo)) { // Comparación ignorando mayúsculas/minúsculas
+            JOptionPane.showMessageDialog(this, "Este amigo ya está registrado.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+            }
+        }
+
         Amigo nuevoAmigo = new Amigo(nombre, telefono, correo);
-
         
-        JOptionPane.showMessageDialog(this, "Amigo agregado exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-        
+        ((PaginaPrincipal) getParent()).agregarAmigo(nuevoAmigo);
         
         this.dispose();
     
@@ -255,8 +269,7 @@ public class AgregarAmigo extends javax.swing.JDialog {
     public boolean validarTelefono(String telefono) {
         return telefono.startsWith("606") || telefono.startsWith("30");
     }
-
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnCancelar;
@@ -265,6 +278,7 @@ public class AgregarAmigo extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField txtCorreo;

@@ -5,7 +5,10 @@
 package autonoma.AmistadesAPP.views;
 import autonoma.AmistadesAPP.models.Amigo;
 import java.awt.Color;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 /**
  *
@@ -13,10 +16,11 @@ import javax.swing.JPanel;
  */
 public class PaginaPrincipal extends javax.swing.JFrame {
     private Amigo amigo;
+    private List<Amigo> listaAmigos = new ArrayList<>();
     /**
      * Creates new form PaginaPrincipal
      */
-    public PaginaPrincipal(Amigo amigo ) {
+    public PaginaPrincipal(Amigo amigo, List<Amigo> listaAmigos ) {
         initComponents();
         
         this.setLocationRelativeTo(null);
@@ -26,6 +30,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
             
         }
         this.amigo = amigo;
+        this.listaAmigos = listaAmigos;
     }
 
     /**
@@ -314,7 +319,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAgregarPersonaMouseEntered
 
     private void btnAgregarPersonaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarPersonaMouseClicked
-        AgregarAmigo agregarVentana = new AgregarAmigo(this, true, amigo);
+        AgregarAmigo agregarVentana = new AgregarAmigo(this, true, amigo, listaAmigos);
         agregarVentana.setVisible(true);
     }//GEN-LAST:event_btnAgregarPersonaMouseClicked
 
@@ -355,6 +360,19 @@ public class PaginaPrincipal extends javax.swing.JFrame {
     
     private void mouseExited(JPanel panel){
         panel.setBackground(new Color(255,255,255));
+    }
+    
+    public void agregarAmigo(Amigo amigo) {
+        // Verificar si el amigo ya existe en la lista
+        for (Amigo a : listaAmigos) {
+            if (a.getCorreo().equalsIgnoreCase(amigo.getCorreo())) {
+                JOptionPane.showMessageDialog(this, "Este amigo ya está registrado.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        }
+        // Agregar el amigo a la lista
+        listaAmigos.add(amigo);
+        JOptionPane.showMessageDialog(this, "Amigo agregado exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AgregarPersona;
