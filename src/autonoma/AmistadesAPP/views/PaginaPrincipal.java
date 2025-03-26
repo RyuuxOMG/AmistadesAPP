@@ -153,6 +153,9 @@ public class PaginaPrincipal extends javax.swing.JFrame {
 
         btnInformacion.setBackground(new java.awt.Color(255, 255, 255));
         btnInformacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnInformacionMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnInformacionMouseEntered(evt);
             }
@@ -354,6 +357,11 @@ public class PaginaPrincipal extends javax.swing.JFrame {
     private void btnSalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseExited
         this.mouseExited(btnSalir);
     }//GEN-LAST:event_btnSalirMouseExited
+
+    private void btnInformacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInformacionMouseClicked
+    Informacion verInfo = new Informacion(this, true);
+        verInfo.setVisible(true);
+    }//GEN-LAST:event_btnInformacionMouseClicked
     private void mouseEntered(JPanel panel){
         panel.setBackground(new Color(0,108,254));
     }
@@ -363,14 +371,14 @@ public class PaginaPrincipal extends javax.swing.JFrame {
     }
     
     public void agregarAmigo(Amigo amigo) {
-        // Verificar si el amigo ya existe en la lista
+        
         for (Amigo a : listaAmigos) {
             if (a.getCorreo().equalsIgnoreCase(amigo.getCorreo())) {
                 JOptionPane.showMessageDialog(this, "Este amigo ya está registrado.", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
         }
-        // Agregar el amigo a la lista
+        
         listaAmigos.add(amigo);
         JOptionPane.showMessageDialog(this, "Amigo agregado exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
     }

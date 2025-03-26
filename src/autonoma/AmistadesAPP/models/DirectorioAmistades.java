@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author sant9
  */
-class DirectorioAmistades {
+    public class DirectorioAmistades {
     private List<Amigo> amigos;
 
     public DirectorioAmistades() {

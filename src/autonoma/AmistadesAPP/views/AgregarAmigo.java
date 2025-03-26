@@ -220,19 +220,19 @@ public class AgregarAmigo extends javax.swing.JDialog {
 
         
         if (!validarCorreo(correo)) {
-            JOptionPane.showMessageDialog(this, "El correo ingresado no es válido.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "El correo ingresado no es valido.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
         
         if (!validarTelefono(telefono)) {
-            JOptionPane.showMessageDialog(this, "El teléfono debe comenzar con 606 o 30.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "El telefono debe comenzar con 606 o 30.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
         
         for (Amigo a : listaAmigos) {
-            if (a.getCorreo().equalsIgnoreCase(correo)) { // Comparación ignorando mayúsculas/minúsculas
-            JOptionPane.showMessageDialog(this, "Este amigo ya está registrado.", "Error", JOptionPane.ERROR_MESSAGE);
+            if (a.getCorreo().equalsIgnoreCase(correo)) { 
+            JOptionPane.showMessageDialog(this, "Este amigo ya esta registrado.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
             }
         }
