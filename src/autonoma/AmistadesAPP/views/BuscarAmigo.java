@@ -2,23 +2,28 @@ package autonoma.AmistadesAPP.views;
 
 import autonoma.AmistadesAPP.models.Amigo;
 import autonoma.AmistadesAPP.models.DirectorioAmistades;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 public class BuscarAmigo extends javax.swing.JDialog {
-
-    private DirectorioAmistades directorio;
+    
+    private List<Amigo> listaAmigos = new ArrayList<>();
+    private Amigo amigo;
 
  
-    public BuscarAmigo(java.awt.Frame parent, boolean modal, DirectorioAmistades directorio) {
+    public BuscarAmigo(java.awt.Frame parent, boolean modal, Amigo amigo, List<Amigo> listaAmigos) {
         super(parent, modal);
         initComponents();
+         this.amigo = amigo;
+        this.listaAmigos = listaAmigos;
         
-        if (directorio == null) {
+        if (listaAmigos == null) {
             JOptionPane.showMessageDialog(this, "El directorio no está disponible.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
-        this.directorio = directorio;
+        
     }
 
 
@@ -198,33 +203,30 @@ public class BuscarAmigo extends javax.swing.JDialog {
     }//GEN-LAST:event_txtNombreActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-try {
-    if (directorio == null) {
-        JOptionPane.showMessageDialog(this, "El directorio no está inicializado.", "Error", JOptionPane.ERROR_MESSAGE);
-        return;
+String correo = txtCorreo.getText().trim();
+        
+        if (correo.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Ingrese un correo.", "Error", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        Amigo amigoEncontrado = buscarAmigoPorCorreo(correo);
+        
+        if (amigoEncontrado != null) {
+            txtNombre.setText(amigoEncontrado.getNombre());
+        } else {
+            JOptionPane.showMessageDialog(this, "Amigo no encontrado", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            txtNombre.setText("");
+        }
     }
-
-    String correo = txtCorreo.getText().trim();
-    System.out.println("Correo ingresado: " + correo); // Depuración
-
-    if (correo.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Ingrese un correo.", "Error", JOptionPane.WARNING_MESSAGE);
-        return;
-    }
-
-    Amigo amigoEncontrado = directorio.buscarAmigo(correo);
-
-    if (amigoEncontrado != null) {
-        txtNombre.setText(amigoEncontrado.getNombre());
-    } else {
-        JOptionPane.showMessageDialog(this, "Amigo no encontrado", "Aviso", JOptionPane.INFORMATION_MESSAGE);
-        txtNombre.setText("");
-    }
-} catch (Exception e) {
-    JOptionPane.showMessageDialog(this, "Ocurrió un error al buscar el amigo.", "Error", JOptionPane.ERROR_MESSAGE);
-    e.printStackTrace(); // Imprime el error en consola para depuración
-}
-
+    
+    private Amigo buscarAmigoPorCorreo(String correo) {
+        for (Amigo a : listaAmigos) {
+            if (a.getCorreo().equalsIgnoreCase(correo)) {
+                return a;
+            }
+        }
+        return null;
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegresarActionPerformed

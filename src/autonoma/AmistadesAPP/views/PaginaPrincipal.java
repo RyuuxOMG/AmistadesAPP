@@ -369,7 +369,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnInformacionMouseClicked
 
     private void btnBuscarAmigoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarAmigoMouseClicked
-     BuscarAmigo buscarAmigo = new BuscarAmigo(this, true, directorio);
+     BuscarAmigo buscarAmigo = new BuscarAmigo(this, true, amigo, listaAmigos);
         buscarAmigo.setVisible(true);
 
     }//GEN-LAST:event_btnBuscarAmigoMouseClicked

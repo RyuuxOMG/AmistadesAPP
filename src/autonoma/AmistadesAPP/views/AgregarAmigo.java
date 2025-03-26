@@ -220,7 +220,7 @@ public class AgregarAmigo extends javax.swing.JDialog {
 
         
         if (!validarCorreo(correo)) {
-            JOptionPane.showMessageDialog(this, "El correo ingresado no es valido.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "El correo ingresado no es valido. Debe tener '@' ", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
