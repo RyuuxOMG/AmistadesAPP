@@ -1,17 +1,21 @@
 
 package autonoma.AmistadesAPP.main;
 
+import autonoma.AmistadesAPP.models.Amigo;
+import autonoma.AmistadesAPP.views.AgregarAmigo;
+import autonoma.AmistadesAPP.views.PaginaPrincipal;
+
 /**
  *
  * @author PC-ASUS
  */
 public class AmistadesAPP {
 
-    /**
-     * @param args the command line arguments
-     */
+   
     public static void main(String[] args) {
-        // TODO code application logic here
+        Amigo amigo = new Amigo(" ", " ", " ");
+        PaginaPrincipal ventana = new PaginaPrincipal(amigo);
+        ventana.setVisible(true);
     }
     
 }

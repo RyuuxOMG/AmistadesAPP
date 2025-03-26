@@ -11,10 +11,10 @@ import java.util.List;
  *
  * @author sant9
  */
-class DirectorioDeAmigos {
+class DirectorioAmistades {
     private List<Amigo> amigos;
 
-    public DirectorioDeAmigos() {
+    public DirectorioAmistades() {
         this.amigos = new ArrayList<>();
     }
 
